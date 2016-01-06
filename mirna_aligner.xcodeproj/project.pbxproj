@@ -24,7 +24,13 @@
 
 /* Begin PBXFileReference section */
 		9E5E12311C34A02C00B1F955 /* mirna_aligner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mirna_aligner; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E5E12341C34A02C00B1F955 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9E5E12341C34A02C00B1F955 /* main.cpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; tabWidth = 2; };
+		9E5E123B1C377E3D00B1F955 /* reference_ramekin.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = reference_ramekin.h; sourceTree = "<group>"; tabWidth = 2; };
+		9E5E124F1C378B7B00B1F955 /* huff_codes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = huff_codes.h; sourceTree = "<group>"; };
+		9E5E12501C378F8C00B1F955 /* kseq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kseq.h; sourceTree = "<group>"; };
+		9E5E12511C37942600B1F955 /* some_functions.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = some_functions.h; sourceTree = "<group>"; tabWidth = 2; };
+		9E5E12521C37B71600B1F955 /* experiment_reads.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = experiment_reads.h; sourceTree = "<group>"; tabWidth = 2; };
+		9E5E12541C3C6ED300B1F955 /* edit_dist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = edit_dist.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				9E5E12341C34A02C00B1F955 /* main.cpp */,
+				9E5E12511C37942600B1F955 /* some_functions.h */,
+				9E5E12541C3C6ED300B1F955 /* edit_dist.h */,
+				9E5E12521C37B71600B1F955 /* experiment_reads.h */,
+				9E5E12501C378F8C00B1F955 /* kseq.h */,
+				9E5E123B1C377E3D00B1F955 /* reference_ramekin.h */,
+				9E5E124F1C378B7B00B1F955 /* huff_codes.h */,
 			);
 			path = mirna_aligner;
 			sourceTree = "<group>";
@@ -202,6 +214,7 @@
 		9E5E12391C34A02C00B1F955 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +222,7 @@
 		9E5E123A1C34A02C00B1F955 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
