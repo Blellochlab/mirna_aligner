@@ -39,5 +39,13 @@ std::unordered_set<std::string> shingle_string(std::string my_seq, int shing_len
 }
 
 
+//Need to check that this is correct for 2 right-open, left-closed intervals
+int overlap_amount(int r1_min, int r1_max, int r2_min, int r2_max){
+  if(r1_min >= r2_max || r2_min >= r1_max ) return 0;
+  else if (r1_min < r2_max) return r1_max - r2_min;
+  else return r2_max - r1_min;
+}
+
+
 
 #endif

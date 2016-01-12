@@ -206,13 +206,11 @@ struct experiment_reads{
           auto seq_loc = (hair_it->first).find(seq);
           for(auto j = 0; j < (hair_it->second).start_pos.size(); ++j){
             auto this_start = (hair_it->second).start_pos[j];
-            if(seq_loc >= this_start){
-              if(seq_loc < (this_start + ((hair_it->second).mat_its[j]->first).length() )){
-                in_mature = true;
-                mat_it = (hair_it->second).mat_its[j];
-                overhang = true;
-                ++times_in_mat;
-              }
+            auto ol = overlap_amount(seq_loc, seq_loc + seq.length(), this_start, ((hair_it->second).mat_its[j]->first).length());
+            if (ol > 0){
+              in_mature = true;
+              overhang = true;
+              ++times_in_mat;
             }
           }
           if(times_in_mat > 1) in_mature = false;
