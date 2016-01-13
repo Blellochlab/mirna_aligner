@@ -19,7 +19,7 @@ struct hairpin{
   std::vector<unsigned long> start_pos;
   std::vector< std::unordered_map<std::string, mature >::iterator > mat_its;
 
-  std::vector<unsigned long > counts_per_file;
+//  std::vector<unsigned long > counts_per_file;
   
   
   hairpin& operator+=(const std::string & myname){
@@ -32,7 +32,7 @@ struct hairpin{
     start_pos.push_back(pos);
   }
   void initialize_size(size_t number_of_libraries){
-    counts_per_file = std::vector<unsigned long>(number_of_libraries, 0);
+//    counts_per_file = std::vector<unsigned long>(number_of_libraries, 0);
   }
 
   void update_mat(std::unordered_map<std::string, mature >::iterator & mat_it, size_t start){
@@ -46,14 +46,14 @@ struct mature{
   std::vector<std::string> mature_names;
   std::vector< std::unordered_map<std::string, hairpin>::iterator > hair_its;
     
-  std::vector<unsigned long > counts_per_file;
+//  std::vector<unsigned long > counts_per_file;
   
   
   void add(std::string & mature_name){
     mature_names.push_back(mature_name );
   }
   void initialize_size(size_t number_of_libraries){
-    counts_per_file = std::vector<unsigned long>(number_of_libraries, 0);
+//    counts_per_file = std::vector<unsigned long>(number_of_libraries, 0);
   }
 
     

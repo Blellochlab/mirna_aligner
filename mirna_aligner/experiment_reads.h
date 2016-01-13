@@ -54,6 +54,7 @@ struct experiment_reads{
 
   struct readInfo{
     std::vector<unsigned long> counts;
+    unsigned short read_start;
     
     float hair_match_prob = 0., mat_match_prob = 0.;
     
@@ -63,8 +64,6 @@ struct experiment_reads{
     
     void increment(experiment_reads & exp_reads){
       ++counts[exp_reads.library_index];
-      if(in_mature) ++((mat_it->second).counts_per_file[exp_reads.library_index]);
-      else if (in_hairpin) ++((hair_it->second).counts_per_file[exp_reads.library_index]);
     }
     
     void search_approximate(std::string & seq, std::unordered_set< std::string > & matched_hair_s, std::unordered_set< std::string > & matched_mat_s, experiment_reads & exp_reads){
@@ -178,6 +177,7 @@ struct experiment_reads{
             in_mature = true;
             in_hairpin = true;
             mat_it = j;
+            read_start = (unsigned short)seq_in_mat;
           }
           else{
             in_multi_mature = true;
@@ -195,6 +195,7 @@ struct experiment_reads{
             if(!in_hairpin){
               in_hairpin = true;
               hair_it = j;
+              read_start = (unsigned short)seq_in_hair;
             }
             else{
               in_multi_hairpin = true;
